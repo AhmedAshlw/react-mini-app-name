@@ -1,5 +1,26 @@
+import "./App.css";
+
 const App = () => {
-  return <h1>Hello world!</h1>;
+  const items = [
+    { name: "Milk", purchased: true },
+    { name: "Bread", purchased: false },
+    { name: "Eggs", purchased: true },
+  ];
+  return (
+    <>
+      <h1>Shopping List</h1>
+      <ul>
+        {items.map((item, index) => (
+          <li
+            key={index}
+            className={item.purchased ? "completed" : "not-completed"}
+          >
+            {item.name}
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 };
 
 export default App;
